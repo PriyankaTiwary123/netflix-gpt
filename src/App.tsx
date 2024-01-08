@@ -1,10 +1,27 @@
-import './App.css';
-import Body from './pages/Body';
+import { Provider } from "react-redux";
+import "./App.css";
+import Body from "./pages/Landing";
+import appStore from "./appStrore";
 
-function App() {
+// const appRouter = createBrowserRouter([
+//   {
+//   path:'/',
+//   element:<Login/>
+// },
+// {
+//   path:'/browse',
+//   element:<Browse/>
+// },
+// ]);
+
+
+const App = () => {
+  
   return (
-   <Body/>
+    <Provider store={appStore}>
+      <Body />
+    </Provider>
   );
-}
+};
 
 export default App;
