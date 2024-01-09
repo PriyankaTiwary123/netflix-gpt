@@ -3,7 +3,9 @@ import UserReducer from "./pages/login/UserSlice"
 
 
 const appStore = configureStore({
-    reducer: UserReducer
+    reducer: {
+        user: UserReducer
+    }
 })
 
 export default appStore

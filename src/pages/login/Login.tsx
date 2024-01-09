@@ -8,15 +8,14 @@ import {
 } from "firebase/auth";
 import { auth } from "../../utils/firebase";
 import { IErrorMessage } from "../../interfaces/interface";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUsers } from "./UserSlice";
+import { USER_AVATAR } from "../../utils/Constants";
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState<Boolean>(true);
   const [errorMessage, setIsErrorMessage] = useState<String | null>("");
 
-  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const email = useRef<any>(null);
@@ -45,8 +44,7 @@ const Login = () => {
               displayName: name.current.value, photoURL: "https://example.com/jane-q-user/profile.jpg"
             }).then(() => {
               const { uid, email, displayName } = auth.currentUser;
-              dispatch(addUsers({uid: uid, email: email, displayName: displayName} ));
-              navigate("/browse")
+              dispatch(addUsers({uid: uid, email: email, displayName: displayName, photoURL: USER_AVATAR} ));
 
             }).catch((error: IErrorMessage) => {
               // An error occurred
@@ -66,10 +64,7 @@ const Login = () => {
           password.current.value
         )
           .then((userCredential) => {
-            // Signed in
             const user = userCredential.user;
-            console.log(user, "signIn");
-            navigate("/browse")
           })
           .catch((error: IErrorMessage) => {
             const errorCode = error.code;
