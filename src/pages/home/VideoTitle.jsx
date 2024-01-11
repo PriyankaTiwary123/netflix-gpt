@@ -1,11 +1,6 @@
 import React from 'react'
 
-type videoType=  {
-    title: String,
-    overview: String
-}
-
-const VideoTitle = (props:videoType) => {
+const VideoTitle = (props) => {
     const {title, overview} = props;
   return (
     <div className='w-screen aspect-video pt-[20%] px-24 absolute text-white bg-gradient-to-r from-black'>

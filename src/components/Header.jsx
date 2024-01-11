@@ -11,7 +11,7 @@ import { addUsers, removeUsers } from "../slices/userSlice";
 const Header = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const user = useSelector((store: any)=> store?.user);
+  const user = useSelector((store)=> store?.user);
 
   const handleSignOut = () => {
     signOut(auth)

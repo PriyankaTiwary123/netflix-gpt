@@ -1,4 +1,4 @@
-import { useState, useRef, FormEvent } from "react";
+import { useState, useRef } from "react";
 import { Header }from "../components";
 import { checkValidData } from "../utils/validate";
 import {
@@ -7,7 +7,6 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
-import { IErrorMessage } from "../interfaces/interface";
 import { useDispatch } from "react-redux";
 import { addUsers } from "../slices/userSlice";
 import { USER_AVATAR } from "../utils/constants";
@@ -18,9 +17,9 @@ const Login = () => {
 
   const dispatch = useDispatch();
 
-  const email = useRef<any>(null);
-  const password = useRef<any>(null);
-  const name = useRef<any>(null);
+  const email = useRef(null);
+  const password = useRef(null);
+  const name = useRef(null);
 
   const toggleSignInForm = () => {
     setIsSignInForm(!isSignInForm);
@@ -46,13 +45,13 @@ const Login = () => {
               const { uid, email, displayName } = auth.currentUser;
               dispatch(addUsers({uid: uid, email: email, displayName: displayName, photoURL: USER_AVATAR} ));
 
-            }).catch((error: IErrorMessage) => {
+            }).catch((error) => {
               // An error occurred
               // ...
             });
             
           })
-          .catch((error: IErrorMessage) => {
+          .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
             setIsErrorMessage(errorMessage);
@@ -66,7 +65,7 @@ const Login = () => {
           .then((userCredential) => {
             const user = userCredential.user;
           })
-          .catch((error: IErrorMessage) => {
+          .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
             setIsErrorMessage(errorMessage);
@@ -87,7 +86,7 @@ const Login = () => {
       </div>
       <div className="flex justify-center mx-auto">
         <form
-          onSubmit={(e: FormEvent<HTMLFormElement>) => e.preventDefault()}
+          onSubmit={(e) => e.preventDefault()}
           className="w-3/12 absolute my-36 p-12 bg-black text-white rounded-lg bg-opacity-80"
         >
           <h1 className="font-bold text-3xl py-4">
