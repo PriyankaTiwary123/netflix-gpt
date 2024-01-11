@@ -9,7 +9,7 @@ import {
 import { auth } from "../utils/firebase";
 import { useDispatch } from "react-redux";
 import { addUsers } from "../slices/userSlice";
-import { USER_AVATAR } from "../utils/constants";
+import { BG_URL, USER_AVATAR } from "../utils/constants";
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
@@ -78,8 +78,8 @@ const Login = () => {
       <Header />
       <div className="absolute">
         <img
-        className="w-screen h-[100vh]"
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/c38a2d52-138e-48a3-ab68-36787ece46b3/15a8acb9-e25c-45a7-b58d-b043b3fec84c/NL-en-20240101-popsignuptwoweeks-perspective_alpha_website_large.jpg"
+        className="w-screen h-[100vh] aspect-auto"
+          src={BG_URL}
           alt="netflix_bg"
         />
       </div>
