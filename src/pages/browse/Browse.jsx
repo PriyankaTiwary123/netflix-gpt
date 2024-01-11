@@ -7,6 +7,7 @@ import usePopularMovies from "../../hooks/usePopularMovies";
 import useTrendingMovies from "../../hooks/useTrendingMovies";
 import useUpcomingMovies from "../../hooks/useUpcomingMovies";
 import Search from "../../components/Search";
+import GptSearchPage from "./GptSearchPage";
 
 const Browse = () => {
   const showGptSearch = useSelector((store) => store.gptSearch.showGptSearch
@@ -21,7 +22,7 @@ const Browse = () => {
     <div>
       <Header />
       {showGptSearch ? (
-        <Search />
+        <GptSearchPage />
       ) : (
         <>
           <MainMovieContainer />

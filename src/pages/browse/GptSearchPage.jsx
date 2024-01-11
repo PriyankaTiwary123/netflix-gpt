@@ -1,15 +1,21 @@
 import React from 'react'
+import { BG_URL } from '../../utils/constants'
 import Search from '../../components/Search'
-import GptMovieSuggestions from './gptMovieSuggestions'
+import GptMovieSuggestions from './GptMovieSuggestions'
 
 
-const GptSearchBar = () => {
+const GptSearchPage = () => {
   return (
-    <div>
-      <Search/>
-      <GptMovieSuggestions/>
-    </div>
+    <>
+      <div className="fixed -z-10">
+        <img className="" src={BG_URL} alt="logo" />
+      </div>
+      <div className="">
+        <Search />
+        <GptMovieSuggestions />
+      </div>
+    </>
   )
 }
 
-export default GptSearchBar
+export default GptSearchPage

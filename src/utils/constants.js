@@ -20,3 +20,5 @@ export const BG_URL = 'https://assets.nflxext.com/ffe/siteui/vlv3/c38a2d52-138e-
   { identifier: "hindi", name: "Hindi" },
   { identifier: "spanish", name: "Spanish" },
 ];
+
+export const OPENAI_KEY = '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'
