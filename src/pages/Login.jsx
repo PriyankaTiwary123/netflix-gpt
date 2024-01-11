@@ -63,10 +63,9 @@ const Login = () => {
           password.current.value
         )
           .then((userCredential) => {
-            const user = userCredential.user;
+            console.log(userCredential);
           })
           .catch((error) => {
-            const errorCode = error.code;
             const errorMessage = error.message;
             setIsErrorMessage(errorMessage);
           });
@@ -79,7 +78,7 @@ const Login = () => {
       <Header />
       <div className="absolute">
         <img
-        className="w-full"
+        className="w-screen h-[100vh]"
           src="https://assets.nflxext.com/ffe/siteui/vlv3/c38a2d52-138e-48a3-ab68-36787ece46b3/15a8acb9-e25c-45a7-b58d-b043b3fec84c/NL-en-20240101-popsignuptwoweeks-perspective_alpha_website_large.jpg"
           alt="netflix_bg"
         />
@@ -87,7 +86,7 @@ const Login = () => {
       <div className="flex justify-center mx-auto">
         <form
           onSubmit={(e) => e.preventDefault()}
-          className="w-3/12 absolute my-36 p-12 bg-black text-white rounded-lg bg-opacity-80"
+          className="xl:w-3/12 md:w-[50%] sm:w-[100%] sm: m-4 absolute my-36 p-12 bg-black text-white rounded-lg bg-opacity-80"
         >
           <h1 className="font-bold text-3xl py-4">
             {isSignInForm ? " Sign In" : "Sign Up"}
