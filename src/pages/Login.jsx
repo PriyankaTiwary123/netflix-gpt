@@ -12,8 +12,8 @@ import { addUsers } from "../slices/userSlice";
 import { USER_AVATAR } from "../utils/constants";
 
 const Login = () => {
-  const [isSignInForm, setIsSignInForm] = useState<Boolean>(true);
-  const [errorMessage, setIsErrorMessage] = useState<String | null>("");
+  const [isSignInForm, setIsSignInForm] = useState(true);
+  const [errorMessage, setIsErrorMessage] = useState("");
 
   const dispatch = useDispatch();
 
