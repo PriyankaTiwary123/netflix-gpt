@@ -21,4 +21,4 @@ export const BG_URL = 'https://assets.nflxext.com/ffe/siteui/vlv3/c38a2d52-138e-
   { identifier: "spanish", name: "Spanish" },
 ];
 
-export const OPENAI_KEY = process.env.OPENAI_KEY
+export const OPENAI_KEY = process.env.REACT_APP_OPENAI_KEY

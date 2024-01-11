@@ -15,7 +15,7 @@ const useTrendingMovies = () => {
       }
     
       useEffect(()=>{
-        trendingMovies && getTrendingMovies();
+        !trendingMovies && getTrendingMovies();
       },[]);
 
 }
