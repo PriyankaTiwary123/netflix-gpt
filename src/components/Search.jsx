@@ -43,7 +43,7 @@ const Search = () => {
   };
 
   return (
-    <div className="pt-[35%] md:pt-[10%] flex justify-center">
+    <div className="pt-[35%] md:pt-[5%] flex justify-center">
       <form
         className="w-full md:w-1/2 bg-black grid grid-cols-12 mt-[10%]"
         onSubmit={(e) => e.preventDefault()}
@@ -55,7 +55,7 @@ const Search = () => {
           placeholder={lang[langKey].gptSearchPlaceholder}
         />
         <button
-          className="py-2 px-4 m-4 col-span-3 bg-red-700 text-white rounded-lg"
+          className="px-2 py-2 m-2 md:py-2 md:px-4 md:m-4 col-span-3 bg-red-700 text-white rounded-lg"
           onClick={handleGptSearch}
         >
           {lang[langKey].search}
